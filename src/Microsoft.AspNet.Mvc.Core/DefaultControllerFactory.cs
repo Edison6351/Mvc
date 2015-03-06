@@ -38,6 +38,17 @@ namespace Microsoft.AspNet.Mvc
             _getPropertiesToActivate = GetPropertiesToActivate;
         }
 
+        /// <summary>
+        /// The <see cref="IControllerActivator"/> used to create a controller.
+        /// </summary>
+        protected IControllerActivator ControllerActivator
+        {
+            get
+            {
+                return _controllerActivator;
+            }
+        }
+
         /// <inheritdoc />
         public virtual object CreateController([NotNull] ActionContext actionContext)
         {
